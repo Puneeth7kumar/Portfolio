@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1024"/>
+      <stop offset="50%" stop-color="#151a38"/>
+      <stop offset="100%" stop-color="#26133b"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="52%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1360" cy="160" r="220" fill="url(#brand)" opacity="0.25"/>
+  <rect x="120" y="110" width="1360" height="680" rx="36" fill="#121934" stroke="#ffffff22"/>
+  <text x="180" y="220" fill="#e2e8f0" font-size="64" font-family="Inter, Arial, sans-serif" font-weight="700">skillswap</text>
+  <text x="180" y="270" fill="#94a3b8" font-size="26" font-family="Inter, Arial, sans-serif">Peer skill exchange platform</text>
+  <rect x="180" y="330" width="390" height="340" rx="24" fill="#1e293b"/>
+  <rect x="610" y="330" width="320" height="160" rx="24" fill="#1e293b"/>
+  <rect x="960" y="330" width="430" height="160" rx="24" fill="url(#brand)" opacity="0.65"/>
+  <rect x="610" y="510" width="780" height="160" rx="24" fill="#1e293b"/>
+  <text x="200" y="375" fill="#60a5fa" font-size="18" font-family="Inter, Arial, sans-serif">Mentor Match</text>
+  <text x="640" y="375" fill="#f8fafc" font-size="20" font-family="Inter, Arial, sans-serif">Skill Requests</text>
+  <text x="990" y="375" fill="#ffffff" font-size="20" font-family="Inter, Arial, sans-serif">Top Recommendations</text>
+</svg>

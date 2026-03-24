@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071225"/>
+      <stop offset="52%" stop-color="#101a35"/>
+      <stop offset="100%" stop-color="#27133f"/>
+    </linearGradient>
+    <linearGradient id="accent5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg5)"/>
+  <rect x="95" y="95" width="1410" height="710" rx="36" fill="#111d38" stroke="#ffffff20"/>
+  <text x="170" y="198" fill="#f8fafc" font-size="54" font-family="Inter, Arial, sans-serif" font-weight="700">Hand Gesture to Text</text>
+  <text x="170" y="244" fill="#94a3b8" font-size="24" font-family="Inter, Arial, sans-serif">AI accessibility assistant for communication</text>
+  <rect x="170" y="300" width="720" height="440" rx="24" fill="#1f2d4c"/>
+  <rect x="920" y="300" width="500" height="200" rx="24" fill="#1f2d4c"/>
+  <rect x="920" y="530" width="500" height="210" rx="24" fill="url(#accent5)" opacity="0.7"/>
+  <circle cx="530" cy="520" r="140" fill="url(#accent5)" opacity="0.35"/>
+  <circle cx="530" cy="520" r="64" fill="#ffffff" opacity="0.22"/>
+</svg>

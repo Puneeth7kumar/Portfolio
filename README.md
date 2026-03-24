@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Starter (Next.js 14)
 
-## Getting Started
+Production-ready portfolio starter built with:
 
-First, run the development server:
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- React Three Fiber (`@react-three/fiber`, `@react-three/drei`)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Folder Structure
+
+```txt
+.
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   └── layout/
+│   │       └── site-header.tsx
+│   ├── config/
+│   │   └── site.ts
+│   ├── features/
+│   │   └── home/
+│   │       └── components/
+│   │           ├── hero-canvas.tsx
+│   │           └── hero-section.tsx
+│   └── lib/
+│       └── utils.ts
+├── .eslintrc.json
+├── next.config.mjs
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration Highlights
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Dark by default**: `layout.tsx` uses `<html className="dark">`
+- **SEO metadata**: full `Metadata` object in `src/app/layout.tsx`
+- **Google font**: Inter via `next/font/google` with `display: "swap"`
+- **Tailwind custom theme**:
+  - Brand colors: blue / purple / pink
+  - Gradient utility (`bg-brand-gradient`)
+  - Surface palette for dark UI
+- **Reusable utilities**:
+  - CSS utilities in `src/app/globals.css` (`text-gradient`, `glass-card`, `container-shell`)
+  - `cn()` helper in `src/lib/utils.ts`
+- **Absolute imports**: configured via `tsconfig.json` with `@/* -> src/*`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Run Locally
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+npm run start
+```
 
-## Deploy on Vercel
+## AI Chatbot Setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The floating chatbot uses OpenAI to answer questions about your projects.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Copy env template:
+
+```bash
+cp .env.example .env.local
+```
+
+2. Add your key in `.env.local`:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+3. Restart dev server if already running.

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { MouseEvent } from "react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ui";
 
@@ -17,6 +18,31 @@ export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (!href.startsWith("#")) {
+      closeMenu();
+      return;
+    }
+
+    event.preventDefault();
+    closeMenu();
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    const headerOffset = window.innerWidth < 640 ? 72 : 84;
+    const top =
+      target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    if (window.__lenis) {
+      window.__lenis.scrollTo(top, { duration: 1.05 });
+    } else {
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-surface-900/80 backdrop-blur-lg">
@@ -34,6 +60,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(event) => scrollToSection(event, link.href)}
               className="whitespace-nowrap px-1 py-0.5 text-text-medium transition hover:text-text-high"
             >
               {link.label}
@@ -83,7 +110,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={closeMenu}
+                onClick={(event) => scrollToSection(event, link.href)}
                 className="rounded-lg px-3 py-2 text-sm text-text-medium transition hover:bg-surface-800/70 hover:text-text-high"
               >
                 {link.label}
